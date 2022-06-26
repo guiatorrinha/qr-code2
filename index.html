@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,14 +36,59 @@
 
     // If you want to prefer back camera
     let start = html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
-    let stop = html5QrCode.stop().then((ignore) => {
-      alert("Parando de scannear")
-    }).catch((err) => {
-      console.log(`error: ${err}`)
-    });
+    let stop = html5QrCode.stop()
 
     // Select back camera or fail with `OverconstrainedError`.
     // html5QrCode.start({ facingMode: { exact: "environment" } }, config, qrCodeSuccessCallback);
+  </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="reader" width="600px" height="600px"></div>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+
+  <input type="file" id="qr-input-file" accept="image/*">
+  <!-- 
+    Or add captured if you only want to enable smartphone camera, PC browsers will ignore it.
+  -->
+
+  <input type="file" id="qr-input-file" accept="image/*" capture>
+
+  <script>
+    const html5QrCode = new Html5Qrcode(/* element id */ "reader");
+    // File based scanning
+    const fileinput = document.getElementById('qr-input-file');
+    fileinput.addEventListener('change', e => {
+      if (e.target.files.length == 0) {
+        // No file selected, ignore 
+        return;
+      }
+
+      const imageFile = e.target.files[0];
+      // Scan QR Code
+      html5QrCode.scanFile(imageFile, true)
+        .then(decodedText => {
+          // success, use decodedText
+          console.log(decodedText);
+        })
+        .catch(err => {
+          // failure, handle it.
+          console.log(`Error scanning file. Reason: ${err}`)
+        });
+    });
   </script>
 </body>
 
