@@ -25,7 +25,7 @@
       alert(`${decodedResult} -- ${decodedText}`)
       var shutter = new Audio();
       shutter.autoplay = true;
-      shutter.src = "beep.mp3";
+      shutter.src = "./beep.mp3";
     };
 
     const config = { fps: 10, qrbox: { width: 250, height: 250 } };
@@ -37,6 +37,11 @@
 
     // If you want to prefer back camera
     let start = html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+    let stop = html5QrCode.stop().then((ignore) => {
+      alert("Parando de scannear")
+    }).catch((err) => {
+      console.log(`error: ${err}`)
+    });
 
     // Select back camera or fail with `OverconstrainedError`.
     // html5QrCode.start({ facingMode: { exact: "environment" } }, config, qrCodeSuccessCallback);
