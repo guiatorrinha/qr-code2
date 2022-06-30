@@ -14,31 +14,37 @@
 </head>
 
 <body>
-  <form action="">
+  <div id="form" class="flex w-full h-screen justify-center">
+    <form action="" class="flex flex-col h-full justify-center gap-4">
 
-    <div class="form-control w-full max-w-xs">
-      <label for="cpf">Digite seu CPF</label>
-      <input id="cpf" type="text" placeholder="" class="input input-bordered w-full max-w-xs" />
-    </div>
-
-
-    <div id="scan">
-      <div id="scan_real_time">
-        <div id="reader" width="600px"></div>
-
-        <button type="button" class="btn btn-outline" onclick={start}>Start</button>
-        <button type="button" onclick={stop}>Stop</button>
+      <div class="form-control w-full max-w-xs">
+        <label for="cpf">
+          <span class="label-text">
+            Digite seu CPF
+          </span>
+        </label>
+        <input id="cpf" type="text" placeholder="" class="input input-bordered w-full max-w-xs" />
+        <label for="cpf">
+          <span class="label-text-alt">
+            Somente números
+          </span>
+        </label>
       </div>
 
-      <input id="qr_value" type="text" placeholder="You can't touch this" class="input input-bordered w-full max-w-xs"
-        disabled />
-    </div>
 
-    <button type="submit" class="btn bg-green-500 gap-1">
-      <img src="./icons8-identificação-verificada-50.png" width="40px" alt="">
-      Autenticar!
-    </button>
-  </form>
+      <div id="scan">
+        <div id="reader" width="400px"></div>
+
+        <input id="qr_value" type="text" placeholder="You can't touch this" class="input input-bordered w-full max-w-xs"
+          disabled />
+      </div>
+
+      <button type="submit" class="btn bg-green-500 gap-1">
+        <img src="./icons8-identificação-verificada-50.png" width="40px" alt="">
+        Autenticar!
+      </button>
+    </form>
+  </div>
 
   <script src="./scripts/scan_real_time.js"></script>
 </body>
