@@ -4,7 +4,7 @@ const qrValue = document.getElementById("qr_value");
 const afterScan = document.getElementById("after_scan");
 
 const gifScan = document.createElement("img");
-gifScan.src = "./images/camera-scan.gif";
+gifScan.src = "../images/camera-scan.gif";
 
 const qrCodeSuccessCallback = (decodedText, decodedResult) => {
   var shutter = new Audio();
