@@ -1,7 +1,0 @@
-<div id="scan_file">
-  <div id="reader_file" width="600px" height="600px"></div>
-    <input type="file" id="qr_input_file" accept="image/*" capture>
-  </div>
-</div>
-
-<script src="./scripts/scan_file.js"></script>
