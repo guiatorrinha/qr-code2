@@ -1,10 +1,9 @@
 const html5QrCode = new Html5Qrcode("reader");
 
 const qrValue = document.getElementById("qr_value");
-const afterScan = document.getElementById("after_scan");
 
-const congrats = document.createElement("img");
-congrats.src = "../images/congrats.svg";
+const scanDiv = document.getElementById("scan");
+const form = document.getElementById("form");
 
 const qrCodeSuccessCallback = (decodedText, decodedResult) => {
   var shutter = new Audio();
@@ -15,7 +14,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
 
   html5QrCode.stop();
 
-  afterScan.appendChild(congrats);
+  form.removeChild(scanDiv);
 };
 
 const config = { fps: 10, qrbox: { width: 250, height: 250 } };

@@ -19,53 +19,51 @@
 
 <body>
   <div id="form" class="flex w-full h-screen justify-center">
-    <form action="" class="flex flex-col h-full justify-center gap-4">
+    <form id="form" action="" class="flex flex-col h-full justify-center gap-4">
       <div class="form-control w-full max-w-xs">
         <label for="cpf">
-          <span class="label-text">
+          <span class="label-text text-white">
             Digite seu CPF
           </span>
         </label>
-        <input id="cpf" type="text" placeholder="" class="input input-bordered w-full max-w-xs" />
+        <input id="cpf" type="text" placeholder=""
+          class="input rounded-lg bg-transparent border-1 border-white w-full max-w-xs" />
         <label for="cpf">
-          <span class="label-text-alt">
+          <span class="label-text-alt text-white">
             Somente números
           </span>
         </label>
       </div>
 
-      <div id="scan" class="mt-4">
-        <div class="card border">
-          <div id="info_button" class="absolute bottom-1 right-2">
-            <button data-tooltip-target="tooltip-click" data-tooltip-trigger="click" type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 p-1 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              <img src="./images/info.svg" width="10px" alt="">
-            </button>
-            <div id="tooltip-click" role="tooltip"
-              class="inline z-10 p-1.5 text-xs font-small text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-              Escaneie o QR Code para preencher automaticamente
-              <div class="tooltip-arrow" data-popper-arrow></div>
-            </div>
-          </div>
+      <div class="flex flex-row mt-2 form-control w-full max-w-xs">
+        <input id="qr_value" type="text" disabled placeholder="Escaneie para preencher"
+          class="input rounded-lg !bg-transparent placeholder:text-white text-white w-full max-w-xs" />
+        <button type="button">
+          <img class="p-2" src="./images/trash.svg" width="50px" alt="">
+        </button>
+      </div>
 
-          <div class="flex justify-center content-center w-100">
-            <div id="reader" width="400px"></div>
-            <div id="after_scan"></div>
+      <div id="scan" class="mt-2">
+        <div id="info_button" class="mb-1">
+          <button data-tooltip-target="tooltip-click" data-tooltip-trigger="click" type="button"
+            class="text-white bg-blue-700 hover:bg-blue-800 p-1 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <img src="./images/info.svg" width="10px" alt="">
+          </button>
+          <div id="tooltip-click" role="tooltip"
+            class="inline z-10 p-1.5 text-xs font-small text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Escaneie o QR Code para preencher automaticamente
+            <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
         </div>
-
-        <div class="mt-8 form-control w-full max-w-xs">
-          <div class="input-group">
-            <input id="qr_value" type="text" placeholder="Escaneie para preencher"
-              class="input input-bordered w-full max-w-xs" disabled />
-            <button type="button">
-              <img class="p-2" src="./images/trash.svg" width="50px" alt="">
-            </button>
+        <div class="card border">
+          <div class="flex justify-center content-center w-100">
+            <div id="reader" width="400px"></div>
+            olaa
           </div>
         </div>
       </div>
 
-      <button type="submit" class="btn bg-green-500 gap-1 mt-12">
+      <button type="submit" class="btn bg-green-500 border-none gap-4 mt-12  h-14">
         <img src="./images/verification.png" width="40px" alt="">
         Autenticar!
       </button>
