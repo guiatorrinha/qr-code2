@@ -20,6 +20,9 @@
 <body>
   <div id="form" class="flex w-full h-screen justify-center">
     <form id="form" action="" class="flex flex-col h-full justify-center gap-4">
+      <div id="reader" width="400px"></div>
+
+
       <div class="form-control w-full max-w-xs">
         <label for="cpf">
           <span class="label-text text-white">
@@ -27,7 +30,7 @@
           </span>
         </label>
         <input id="cpf" type="tel" inputmode="numeric" placeholder=""
-          class="input rounded-lg bg-transparent border-1 border-white w-full max-w-xs" />
+          class="input rounded-lg bg-transparent border-1 border-white text-white w-full max-w-xs" />
         <label for="cpf">
           <span class="label-text-alt text-white">
             Somente números
@@ -37,14 +40,14 @@
 
       <div class="flex flex-row mt-2 form-control w-full max-w-xs">
         <input id="qr_value" type="text" disabled placeholder="Escaneie para preencher"
-          class="input rounded-lg disabled:bg-transparent disabled:placeholder:text-white disabled:text-white w-full max-w-xs" />
-        <button type="button">
+          class="input rounded-lg disabled:bg-transparent disabled:placeholder:text-white disabled:text-white w-full max-w-xs border-r-0 rounded-r-none" />
+        <button type="button" class="bg-[#6A992F] border border-l-0 rounded-r-lg px-4">
           <img class="p-2" src="./images/trash.svg" width="50px" alt="">
         </button>
       </div>
 
-      <div id="scan" class="mt-2 flex flex-col bg-blue-600 justify-center content-center">
-        <div id="info_button" class="mb-1">
+      <!-- <div id="scan" class="mt-2">
+          <div id="info_button" class="mb-1">
           <button data-tooltip-target="tooltip-click" data-tooltip-trigger="click" type="button"
             class="text-white bg-blue-700 hover:bg-blue-800 p-1 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             <img src="./images/info.svg" width="10px" alt="">
@@ -55,14 +58,13 @@
             <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
         </div>
-        <div class="card border">
-          <div class="flex justify-center content-center w-100 p-2">
-            <div id="reader" width="400px"></div>
-          </div>
+      <div class="card border">
+        <div class="flex justify-center content-center w-100 p-2 rounded-md">
         </div>
       </div>
+  </div> -->
 
-      <button type="submit" class="btn bg-green-500 border-none gap-4 mt-12 text-white h-14">
+      <button type="submit" class="btn bg-[#6A992F] border-none gap-4 mt-12 text-white h-14">
         <img src="./images/verification.png" width="40px" alt="">
         Autenticar!
       </button>
