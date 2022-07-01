@@ -13,6 +13,7 @@
   <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 
   <script src="./scripts/qr-code.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="./styles/index.css">
 
 </head>
 
@@ -35,7 +36,7 @@
 
       <div id="scan" class="mt-4">
         <div class="card border">
-          <label for="qr_value" class="label">
+          <label for="qr_value" class="right-0.5	top-0.5 absolute">
             <span class="label-text"></span>
             <span class="mr-1 label-text-alt">
               <button data-tooltip-target="tooltip-click" data-tooltip-trigger="click" type="button"
@@ -49,9 +50,11 @@
               </div>
             </span>
           </label>
-          <div class="card-body flex justify-center">
+          <div class="flex justify-center content-center w-100">
             <div id="reader" width="400px"></div>
-            <div id="after_scan"></div>
+            <div id="after_scan">
+              <button id="load" class="btn btn-square loading bg-transparent outline-none border-none"></button>
+            </div>
           </div>
         </div>
 
@@ -59,8 +62,8 @@
           <div class="input-group">
             <input id="qr_value" type="text" placeholder="Escaneie para preencher"
               class="input input-bordered w-full max-w-xs" disabled />
-            <button class="bg-blue-400" type="button">
-              <img class="p-2" src="./images/re_do.svg" width="50px" alt="">
+            <button type="button">
+              <img class="p-2" src="./images/trash.svg" width="50px" alt="">
             </button>
           </div>
         </div>
