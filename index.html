@@ -19,89 +19,86 @@
 <body>
   <div id="form" class="flex w-full h-screen justify-center">
     <form action="" class="flex flex-col h-full justify-center gap-4">
-      <div class="indicator">
+
+
+      <div class="form-control w-full max-w-xs">
+        <label for="cpf">
+          <span class="label-text">
+            Digite seu CPF
+          </span>
+        </label>
+        <input id="cpf" type="text" placeholder="" class="input input-bordered w-full max-w-xs" />
+        <label for="cpf">
+          <span class="label-text-alt">
+            Somente números
+          </span>
+        </label>
+      </div>
+
+
+
+
+
+      <div id="scan" class="mt-4">
+
         <div class="card border">
+          <label for="qr_value" class="label">
+            <span class="label-text"></span>
+            <span class="mr-1 label-text-alt">
+              <button data-tooltip-target="tooltip-click" data-tooltip-trigger="click" type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 p-1 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <img src="./free_icon_.svg" width="10px" alt="">
+              </button>
+              <div id="tooltip-click" role="tooltip"
+                class="inline-block absolute invisible max-w-xs z-10 py-2 px-2 text-sm font-small text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Escaneie o QR Code para preencher o campo automaticamente
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </span>
+          </label>
           <div class="card-body">
 
-
-            <div class="form-control w-full max-w-xs">
-              <label for="cpf">
-                <span class="label-text">
-                  Digite seu CPF
-                </span>
-              </label>
-              <input id="cpf" type="text" placeholder="" class="input input-bordered w-full max-w-xs" />
-              <label for="cpf">
-                <span class="label-text-alt">
-                  Somente números
-                </span>
-              </label>
-            </div>
-
-
-
-
-
-            <div id="scan" class="mt-4">
-
-              <div class="card border">
-                <div class="card-body p-20">
-                  <div id="reader" width="400px"></div>
-
-
-
-                </div>
-              </div>
-
-
-
-
-
-
-
-              <div class="form-control w-full max-w-xs">
-                <label for="qr_value" class="label">
-                  <span class="label-text"></span>
-                  <span class="label-text-alt">
-                    <button data-tooltip-target="tooltip-click" data-tooltip-trigger="click" type="button"
-                      class="text-white bg-blue-700 hover:bg-blue-800 p-1 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <img src="./free_icon_.svg" width="10px" alt="">
-                    </button>
-                    <div id="tooltip-click" role="tooltip"
-                      class="inline-block absolute invisible max-w-xs z-10 py-2 px-2 text-sm font-small text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                      Escaneie o QR Code para preencher o campo automaticamente
-                      <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-                  </span>
-                </label>
-                <div class="input-group">
-
-
-
-
-                  <input id="qr_value" type="text" placeholder="Preenchido automaticamente"
-                    class="input input-bordered w-full max-w-xs" disabled />
-                  <button class="bg-blue-400" type="button">
-                    <img class="p-2" src="./re_do.svg" width="50px" alt="">
-                  </button>
-                </div>
-
-              </div>
-            </div>
-
-            <button type="submit" class="btn bg-green-500 gap-1 mt-12">
-              <img src="./icons8-identificação-verificada-50.png" width="40px" alt="">
-              Autenticar!
-            </button>
-
-
-
+            <div id="reader" width="400px"></div>
 
 
 
           </div>
         </div>
+
+
+
+
+
+
+
+        <div class="mt-8 form-control w-full max-w-xs">
+
+          <div class="input-group">
+
+
+
+
+            <input id="qr_value" type="text" placeholder="Escaneie para preencher"
+              class="input input-bordered w-full max-w-xs" disabled />
+            <button class="bg-blue-400" type="button">
+              <img class="p-2" src="./re_do.svg" width="50px" alt="">
+            </button>
+          </div>
+
+        </div>
       </div>
+
+      <button type="submit" class="btn bg-green-500 gap-1 mt-12">
+        <img src="./icons8-identificação-verificada-50.png" width="40px" alt="">
+        Autenticar!
+      </button>
+
+
+
+
+
+
+
     </form>
   </div>
 
