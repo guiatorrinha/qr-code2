@@ -19,8 +19,6 @@
 <body>
   <div id="form" class="flex w-full h-screen justify-center">
     <form action="" class="flex flex-col h-full justify-center gap-4">
-
-
       <div class="form-control w-full max-w-xs">
         <label for="cpf">
           <span class="label-text">
@@ -35,12 +33,7 @@
         </label>
       </div>
 
-
-
-
-
       <div id="scan" class="mt-4">
-
         <div class="card border">
           <label for="qr_value" class="label">
             <span class="label-text"></span>
@@ -57,34 +50,19 @@
             </span>
           </label>
           <div class="card-body">
-
             <div id="reader" width="400px"></div>
-
-
-
+            <div id="after_scan"></div>
           </div>
         </div>
 
-
-
-
-
-
-
         <div class="mt-8 form-control w-full max-w-xs">
-
           <div class="input-group">
-
-
-
-
             <input id="qr_value" type="text" placeholder="Escaneie para preencher"
               class="input input-bordered w-full max-w-xs" disabled />
             <button class="bg-blue-400" type="button">
               <img class="p-2" src="./re_do.svg" width="50px" alt="">
             </button>
           </div>
-
         </div>
       </div>
 
@@ -92,16 +70,8 @@
         <img src="./icons8-identificação-verificada-50.png" width="40px" alt="">
         Autenticar!
       </button>
-
-
-
-
-
-
-
     </form>
   </div>
-
   <script src="./scripts/scan_real_time.js"></script>
 </body>
 
