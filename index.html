@@ -23,19 +23,19 @@
 
 <body>
   <div id="form" class="flex w-full h-screen justify-center">
-    <form id="form" action="" class="flex flex-col h-full justify-center gap-4">
+    <form id="form" action="https://submit.jotform.com/submit/221863860520050/"
+      class="flex flex-col h-full justify-center gap-4">
       <div id="reader" width="400px" class="rounded-lg"></div>
 
-
       <div class="form-control w-full max-w-xs">
-        <label for="cpf">
+        <label for="q4_cpf">
           <span class="label-text text-white">
             Digite seu CPF
           </span>
         </label>
-        <input required id="cpf" type="tel" inputmode="numeric" placeholder=""
+        <input name="q4_cpf" required id="cpf" type="tel" inputmode="numeric" placeholder=""
           class="input rounded-lg bg-transparent placeholder:text-white border-1 focus:border-none active:border-white focus:outline-none focus:ring focus:ring-[#6A992F] border-white text-white w-full max-w-xs" />
-        <label for="cpf">
+        <label for="q4_cpf">
           <span class="label-text-alt text-white">
             Somente números
           </span>
@@ -43,14 +43,19 @@
       </div>
 
       <div class="flex flex-row mt-2 form-control w-full max-w-xs">
-        <input required disabled id="qr_value" type="text" placeholder="Escaneie para preencher"
+        <input name="q7_insiraUma7" required disabled id="qr_value" type="text" placeholder="Escaneie para preencher"
           class="input rounded-lg disabled:bg-transparent disabled:placeholder:text-white disabled:text-white w-full max-w-xs border-r-0 rounded-r-none" />
-        <button id="clear_disabled" type="button" class="bg-[#6A992F] btn-ghost border border-l-0 rounded-r-lg px-4">
-          <img class="p-2" src="./images/trash.svg" width="50px" alt="">
+
+        <button data-tooltip-target="tooltip-click" data-tooltip-trigger="click" type="button"
+          class="bg-[#6A992F] btn-ghost border border-l-0 rounded-r-lg">
+          <img class="p-2" src="./images/info.svg" width="40px" alt="">
         </button>
+        <div id="tooltip-click" role="tooltip"
+          class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+          Tooltip content
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
       </div>
-
-
 
       <button type="submit" class="btn btn-ghost bg-[#6A992F] border-none gap-4 mt-12 text-white h-14">
         <img src="./images/verification.png" width="40px" alt="">
@@ -59,14 +64,6 @@
     </form>
   </div>
 
-  <script>
-    const clear_disabled = document.getElementById("clear_disabled");
-    const qr_value = document.getElementById("qr_value");
-
-    clear_disabled.addEventListener('click', () => {
-      qr_value.value = "";
-    })
-  </script>
   <script src="./scripts/scan_real_time.js"></script>
 </body>
 
